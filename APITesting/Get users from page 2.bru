@@ -1,0 +1,19 @@
+meta {
+  name: Get users from page 2
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/users/?page=2
+  body: none
+  auth: none
+}
+
+query {
+  page: 2
+}
+
+assert {
+  res.status: eq 200
+}

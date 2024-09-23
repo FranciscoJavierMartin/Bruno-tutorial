@@ -1,0 +1,22 @@
+meta {
+  name: Update user
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/users/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "name": "morpheus",
+      "job": "zion resident"
+  }
+}
+
+assert {
+  res.status: eq 200
+}

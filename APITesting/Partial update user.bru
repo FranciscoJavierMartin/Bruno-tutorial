@@ -1,0 +1,22 @@
+meta {
+  name: Partial update user
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/users/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "name": "morpheus",
+      "job": "zion resident"
+  }
+}
+
+assert {
+  res.status: eq 200
+}
